@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NeuroLearn AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://kit.fontawesome.com/yourkit.js"></script>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+             NeuroLearn AI
+        </a>
+
+        <div>
+            <span class="text-light me-4">
+                Welcome {{ user }}
+            </span>
+
+            <a href="/logout" class="btn logout-btn">
+                Logout
+            </a>
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <h1>
+            Intelligent Personalized Study Companion
+        </h1>
+
+        <p>
+            AI Powered Learning • Quiz Generation • PDF Chat • Notes Summarizer
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= MAIN ================= -->
+
+<div class="container py-5">
+
+    <div class="row g-4">
+
+        <!-- CHATBOT -->
+
+        <div class="col-lg-6">
+
+            <div class="ai-card">
+
+                <h2> AI Study Chatbot</h2>
+
+                <textarea
+                    id="chatInput"
+                    class="form-control custom-input"
+                    rows="6"
+                    placeholder="Ask anything about studies..."
+                ></textarea>
+
+                <button
+                    class="action-btn mt-3"
+                    onclick="sendChat()"
+                >
+                    Ask AI
+                </button>
+
+                <div id="chatLoader" class="loader"></div>
+
+                <div id="chatResponse" class="response-box"></div>
+
+            </div>
+
+        </div>
+
+        <!-- SUMMARIZER -->
+
+        <div class="col-lg-6">
+
+            <div class="ai-card">
+
+                <h2> Notes Summarizer</h2>
+
+                <textarea
+                    id="notesInput"
+                    class="form-control custom-input"
+                    rows="6"
+                    placeholder="Paste your notes here..."
+                ></textarea>
+
+                <button
+                    class="action-btn mt-3"
+                    onclick="summarizeNotes()"
+                >
+                    Summarize Notes
+                </button>
+
+                <div id="summaryLoader" class="loader"></div>
+
+                <div id="summaryResponse" class="response-box"></div>
+
+            </div>
+
+        </div>
+
+        <!-- QUIZ -->
+
+        <div class="col-lg-6">
+
+            <div class="ai-card">
+
+                <h2> Quiz Generator</h2>
+
+                <input
+                    type="text"
+                    id="quizTopic"
+                    class="form-control custom-input"
+                    placeholder="Enter topic..."
+                >
+
+                <button
+                    class="action-btn mt-3"
+                    onclick="generateQuiz()"
+                >
+                    Generate Quiz
+                </button>
+
+                <div id="quizLoader" class="loader"></div>
+
+                <div id="quizResponse" class="response-box"></div>
+
+            </div>
+
+        </div>
+
+        <!-- PDF CHAT -->
+
+        <div class="col-lg-6">
+
+            <div class="ai-card">
+
+                <h2> Chat With PDF</h2>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    class="form-control custom-input"
+                >
+
+                <input
+                    type="text"
+                    id="docQuestion"
+                    class="form-control custom-input mt-3"
+                    placeholder="Ask question from document..."
+                >
+
+                <button
+                    class="action-btn mt-3"
+                    onclick="uploadDocument()"
+                >
+                    Upload & Ask
+                </button>
+
+                <div id="docLoader" class="loader"></div>
+
+                <div id="docResponse" class="response-box"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

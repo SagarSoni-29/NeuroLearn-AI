@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NeuroLearn AI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- CURTAIN -->
+
+<div class="curtain" id="curtain">
+
+    <div class="curtain-content">
+
+        <h1> NeuroLearn AI</h1>
+
+        <p>
+            Intelligent Personalized Study Companion
+        </p>
+
+        <button onclick="openCurtain()">
+            Enter Experience
+        </button>
+
+    </div>
+
+</div>
+
+<!-- LANDING -->
+
+<section class="landing-page">
+
+    <div class="particles"></div>
+
+    <div class="landing-content">
+
+        <h1>
+            Revolutionize Your Learning with AI
+        </h1>
+
+        <p>
+            AI Chatbot • Quiz Generator • Notes Summarizer • PDF Intelligence
+        </p>
+
+        <div class="landing-buttons">
+
+            <a href="/login">Login</a>
+
+            <a href="/signup">Sign Up</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+function openCurtain(){
+
+    document
+        .getElementById("curtain")
+        .classList.add("hide-curtain");
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+streamlit
+python-dotenv
+bcrypt
+google-generativeai
+PyPDF2
+python-docx
+pandas
+flask
+groq
+werkzeug
